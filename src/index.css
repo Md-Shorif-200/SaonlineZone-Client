@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+/*---------------- color section */
+
+  .primary_btn{
+    @apply btn bg-black text-white text-base
+  }
+
+  .common_spacing{
+    @apply px-4 sm:px-8 md:px-12 lg:px-16
+  }
+
+
+
