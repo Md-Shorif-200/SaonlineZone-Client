@@ -10,7 +10,7 @@ const Banner = () => {
       {/* ---------- Banner Content ---------- */}
       <div className="w-full md:w-1/2 lg:w-[45%] text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-          Modern <span className="text-indigo-600">Microservices</span> Architecture
+          Modern <span className="primary_text_color">Microservices</span> Architecture
         </h1>
         <p className="text-base md:text-lg text-gray-600 mt-4 mb-8">
           Build and scale applications <br className="hidden md:block" />
@@ -19,10 +19,10 @@ const Banner = () => {
 
         {/* --------- Buttons --------- */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
-          <button className="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition duration-300 font-medium shadow">
+          <button className="primary_btn">
             Get Started
           </button>
-          <button className="flex items-center gap-2 border border-indigo-600 text-indigo-600 px-6 py-3 rounded-md hover:bg-indigo-50 transition duration-300 font-medium">
+          <button className="flex items-center gap-2 btn_outline">
             <FaPlay className="text-sm" />
             Watch Video
           </button>

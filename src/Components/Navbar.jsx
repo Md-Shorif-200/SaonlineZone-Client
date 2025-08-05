@@ -34,7 +34,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className=" nav-start flex items-center gap-x-2">
             <img src={nav_logo} alt="Logo" className="w-[60px] h-[60px]" />
-            <h2 className="text-xl font-semibold">Saonline <span className="text-cyan-500">Zone</span> </h2>
+            <h2 className="text-xl font-semibold">Saonline <span className="primary_text_color">Zone</span> </h2>
           </div>
 
                         {/* nav-links */}
