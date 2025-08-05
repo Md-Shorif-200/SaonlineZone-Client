@@ -28,7 +28,7 @@ const Navbar = () => {
   const handleMenuIcon = () => setIsActive(true);
 
   return (
-    <div className="bg-base-100  top-0 z-50 common_spacing">
+    <div className="bg-base-100 shadow-sm sticky  top-0 z-50 common_spacing">
       <div className="flex items-center justify-between  py-3 relative">
         
           {/* Logo */}
