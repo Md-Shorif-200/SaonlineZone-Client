@@ -8,6 +8,11 @@
   @apply text-indigo-600
  }
 
+  .primary_bg_color {
+  @apply bg-indigo-500
+ }
+
+
   .primary_btn{
     @apply bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition duration-300 font-medium shadow
   }

@@ -54,9 +54,9 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:block">
-             <Link to="signIn">
+             <Link to="dashboard">
                 <button className="primary_btn uppercase">
-                  <span>Log In</span>
+                  <span>Dashboard</span>
                 </button>
               </Link>
           
