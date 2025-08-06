@@ -5,7 +5,7 @@ import { Navigate } from 'react-router-dom';
 
 const Dashboard_Redirect = () => {
 
-     const role = 'admin'
+     const role = 'user'
 
       console.log(role);
       
@@ -15,8 +15,8 @@ const Dashboard_Redirect = () => {
 
                             
 
-                    if(role == 'admin'){
-                           return <Navigate to='/dashboard/admin-menu'></Navigate>
+                    if(role == 'user'){
+                           return <Navigate to='/dashboard/Find-Job'></Navigate>
                     }
 
 

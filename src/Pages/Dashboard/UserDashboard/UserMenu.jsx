@@ -1,16 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaHome, FaUsers, FaBoxOpen } from 'react-icons/fa';
+import { FaHome, FaUsers, FaBoxOpen, FaSearchDollar, FaPooStorm } from 'react-icons/fa';
 
-const adminLinks = [
+const userMenuLinks = [
   {
-    name: 'All Users',
-    path: '/dashboard/admin',
-    icon: <FaUsers className="text-lg" />,
+    name: 'Find Job',
+    path: '/dashboard/Find-Job',
+    icon: <FaSearchDollar className="text-lg" />,
   },
-
-  {
-    divider: true, // to mark a divider
+   {
+    name: 'Post New Job',
+    path: '/dashboard/Post-Job',
+    icon: <FaPooStorm className="text-lg" />,
   },
   {
     name: 'Home',
@@ -21,14 +22,14 @@ const adminLinks = [
   },
 ];
 
-const Admin_Menu = () => {
+const UserMenu = () => {
   return (
     <div className="w-70 md:w-80 primary_bg_color min-h-screen  p-4">
       <ul className="bg-base-200 shadow-sm rounded-xl min-h-full w-full md:w-60 lg:w-72 p-4 space-y-2 h-1/2 text-base-content">
 
-        <li className="text-xl text-center font-bold primary_text_color mb-6">Admin Panel</li>
+        <li className="text-xl text-center font-bold primary_text_color mb-6">User Panel</li>
 
-        {adminLinks.map((item, index) => {
+        {userMenuLinks.map((item, index) => {
           if (item.divider) {
             return <div key={index} className="divider"></div>;
           }
@@ -62,4 +63,4 @@ const Admin_Menu = () => {
   );
 };
 
-export default Admin_Menu;
+export default UserMenu;

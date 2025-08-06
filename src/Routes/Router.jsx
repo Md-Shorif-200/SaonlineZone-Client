@@ -9,6 +9,8 @@ import About from "../Pages/AboutPage/About";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard_Redirect from "../Pages/Dashboard/Dashboard_Redirect";
 import AllUsers from "../Pages/Dashboard/AdminDashboard/AllUsers";
+import Find_Job from "../Pages/Dashboard/UserDashboard/Find_Job";
+import PostJob from "../Pages/Dashboard/UserDashboard/PostJob";
 
 
 
@@ -39,8 +41,12 @@ export const router = createBrowserRouter([
         element : <Dashboard_Redirect></Dashboard_Redirect>
       },
       {
-        path : '/dashboard/admin-menu',
-        element : <AllUsers></AllUsers>
+        path : '/dashboard/Find-Job',
+        element : <Find_Job></Find_Job>
+      },
+      {
+        path : '/dashboard/Post-Job',
+        element : <PostJob></PostJob>
       }
     ]
   }

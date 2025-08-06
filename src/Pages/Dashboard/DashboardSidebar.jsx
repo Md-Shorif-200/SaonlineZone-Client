@@ -1,5 +1,5 @@
 import React from "react";
-import AdminMenu from "./AdminDashboard/AdminMenu";
+import UserMenu from "./UserDashboard/UserMenu";
 
 
 const DashboardSidebar = () => {
@@ -13,7 +13,7 @@ const DashboardSidebar = () => {
         aria-label="close sidebar"
         className="drawer-overlay"
       ></label>
-      {role === "admin" && <AdminMenu></AdminMenu>}
+      {role === "admin" && <UserMenu></UserMenu>}
 
     </div>
   );
