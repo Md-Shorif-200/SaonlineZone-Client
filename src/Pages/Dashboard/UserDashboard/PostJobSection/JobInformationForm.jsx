@@ -202,10 +202,10 @@ const JobInformationForm = () => {
         </div>
 
         {/* Buttons */}
-        <div className="flex justify-between pt-4">
+        <div className="flex justify-end pt-4 gap-x-4">
           <button
             type="button"
-            className="btn btn-outline px-6 py-2 rounded hover:bg-gray-100"
+            className="btn_outline"
             onClick={handleBack}
           >
             Back
@@ -213,7 +213,7 @@ const JobInformationForm = () => {
 
           <button
             type="submit"
-            className="btn btn-primary px-6 py-2 rounded"
+            className="primary_btn"
           >
             Next
           </button>
