@@ -1,38 +1,39 @@
-import React from 'react';
-import Lottie from 'lottie-react';
-import { FaPlay } from 'react-icons/fa';
-
-import banner_animation from '../../../public/Banner/service.json';
+import React from "react";
+import banner_img from "../../../public/Banner/banner.jpg";
 
 const Banner = () => {
   return (
-    <div className="w-full min-h-screen max-h-[750px] bg-[#F8FAFC] px-6 md:px-12 md:flex items-center justify-between gap-8 py-10">
-      {/* ---------- Banner Content ---------- */}
-      <div className="w-full md:w-1/2 lg:w-[45%] text-center md:text-left">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-          Modern <span className="primary_text_color">Microservices</span> Architecture
+    <div
+      className="w-full min-h-screen flex flex-col justify-center items-center text-center text-white px-4 py-16 bg-black/15"
+      style={{
+        backgroundImage: `url(${banner_img})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundBlendMode: "multiply",
+    
+      }}
+    >
+      <div className="max-w-5xl mx-auto space-y-6">
+        <h4 className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-widest text-white">
+          Best Solution & Creative
+        </h4>
+
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase font-bold leading-tight">
+          Grow Your Business Now
         </h1>
-        <p className="text-base md:text-lg text-gray-600 mt-4 mb-8">
-          Build and scale applications <br className="hidden md:block" />
-          with unmatched speed and flexibility.
+
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white max-w-3xl mx-auto">
+          Together we are going to help you determine a goal, choose your tools, and develop your business to make it distinct.
         </p>
 
-        {/* --------- Buttons --------- */}
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <button className="primary_btn">
+        <div className="flex flex-col sm:flex-row sm:justify-center gap-4 mt-6 w-full sm:w-auto">
+          <button className="btn_outline uppercase w-full sm:w-auto">
             Get Started
           </button>
-          <button className="flex items-center gap-2 btn_outline">
-            <FaPlay className="text-sm" />
-            Watch Video
+          <button className="primary_btn uppercase w-full sm:w-auto">
+            Read More
           </button>
-        </div>
-      </div>
-
-      {/* ---------- Banner Animation ---------- */}
-      <div className="w-full md:w-1/2 lg:w-[55%] flex justify-center">
-        <div className="w-[80%] max-w-md">
-          <Lottie animationData={banner_animation} loop={true} />
         </div>
       </div>
     </div>

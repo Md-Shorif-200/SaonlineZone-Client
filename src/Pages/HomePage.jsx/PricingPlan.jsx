@@ -23,7 +23,7 @@ const plans = [
 
 const PricingPlan = () => {
   return (
-    <section className="py-16 px-10 md:px-12 bg-[#f9fafb] text-gray-800 ">
+    <section className="py-16 px-10 md:px-12 bg-[#f9fafb] text-gray-800 my-20">
    
       <div className="max-w-6xl mx-auto text-center ">
         <p className="text-sm primary_text_color font-semibold mb-2">CHOOSE YOUR FAVORITE PLAN</p>
