@@ -1,110 +1,102 @@
-import React, { useState } from 'react';
-
-const regions = [
-  'International', 'Asia', 'USA & Western', 'Africa',
-  'Europe West', 'Muslim Countries', 'Europe East',
-  'Latin America', 'All'
-];
-
-const countries = [
-  'Albania', 'Lithuania', 'Nepal', 'Poland', 'Slovenia', 'China', 'Russia',
-  'Japan', 'South Korea', '(UAE)United Arab Emirates', 'Sri Lanka', 'Malaysia',
-  'Philippines', 'Singapore', 'Thailand', 'Vietnam', 'Afghanistan', 'United States',
-  'Canada', 'Australia', 'New Zealand', 'Egypt', 'Morocco', 'Indonesia', 'Romania',
-  'Germany', 'France', 'United Kingdom', 'Bangladesh', 'India', 'Pakistan'
-];
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { usePostJob } from "../../../Context/PostJobProvider";
 
 const PostJob = () => {
-  const [activeRegion, setActiveRegion] = useState('International');
-  const [hiddenCountries, setHiddenCountries] = useState([]);
-
-  const toggleCountry = (country) => {
-    if (hiddenCountries.includes(country)) {
-      setHiddenCountries(hiddenCountries.filter(item => item !== country));
-    } else {
-      setHiddenCountries([...hiddenCountries, country]);
-    }
-  };
+  const { activeLine1, activeLine2, activeLine3 } = usePostJob(false); // Collect data from the context api
 
   return (
-   <div className="post_job_section p-10">
-             <div className="p-12 max-w-6xl mx-auto bg-white shadow-sm border border-gray-200">
-     
+    <div>
+      <div className="post_job_section p-10">
+        <div className="p-12 max-w-6xl mx-auto bg-white shadow-sm border border-gray-200">
+          {/* ------------------ job progess bar ------------*/}
+          <div className="w-[95%] post_job_progress flex mx-auto px-4">
+            {/* ------- location */}
+            <div className="w-[25%] location_progress relative">
+              <div className=" ">
+                <div className="w-12 h-12 bg-blue-500 rounded-full text-white font-semibold text-2xl flex justify-center items-center z-10 relative">
+                  1
+                </div>
+                <p>Location</p>
+              </div>
+                {/*line 1 */}
+              <div
+                className={`line_1 w-full h-1 absolute top-5 left-5  z-0 ${
+                  activeLine1 ? "bg-blue-500" : "bg-gray-300"
+                } `}
+              ></div>
+            </div>
 
+            {/* ------------ category */}
+            <div className="w-[25%] location_progress relative">
+              <div className=" ">
+                <div
+                  className={`w-12 h-12 shadow-sm border border-gray-300 rounded-full font-semibold text-2xl flex justify-center items-center z-10 relative ${
+                    activeLine1
+                      ? "bg-blue-500 text-white"
+                      : " bg-white  text-black"
+                  }`}
+                >
+                  2
+                </div>
+                <p>Select Category</p>
+              </div>
+                        {/* line 2 */}
+              <div
+                className={`line_2 w-full h-1 absolute top-5 left-5  z-0 ${
+                  activeLine2 ? "bg-blue-500" : "bg-gray-300"
+                } `}
+              ></div>
+            </div>
 
+            {/* ------------ Job Information */}
+            <div className="w-[25%] location_progress relative">
+              <div className=" ">
+                <div
+                  className={`w-12 h-12 shadow-sm border border-gray-300 rounded-full font-semibold text-2xl flex justify-center items-center z-10 relative ${
+                    activeLine2
+                      ? "bg-blue-500 text-white"
+                      : " bg-white  text-black"
+                  }`}
+                >
+                  3
+                </div>
+                <p>Job Information</p>
+              </div>
+                    {/* line 3 */}
+              <div
+                className={`line_3 w-full h-1 absolute top-5 left-5  z-0 ${
+                  activeLine3 ? "bg-blue-500" : "bg-gray-300"
+                } `}
+              ></div>
+            </div>
 
+            {/* ------------ Budget & Setting */}
+            <div className="w-[25%] location_progress relative">
+              <div className=" ">
+                <div
+                  className={`w-12 h-12 shadow-sm border border-gray-300 rounded-full font-semibold text-2xl flex justify-center items-center z-10 relative ${
+                    activeLine3
+                      ? "bg-blue-500 text-white"
+                      : " bg-white  text-black"
+                  }`}
+                >
+                  4
+                </div>
+                <p>Budget & Setting</p>
+              </div>
+            </div>
+          </div>
 
-<div className="flex justify-between items-center mb-12">
-  {['Select Location', 'Select Category', 'Job Information', 'Budget & Setting'].map((step, index, arr) => (
-    <div key={index} className="flex-1 flex flex-col items-center relative">
+          {/* render dynamic content */}
 
-      {/* Left line */}
-      {index !== 0 && (
-        <div className="absolute top-5 left-0 w-1/2 h-1 bg-gray-300 z-0"></div>
-      )}
-
-      {/* Right line */}
-      {index !== arr.length - 1 && (
-        <div className="absolute top-5 right-0 w-1/2 h-1 bg-gray-300 z-0"></div>
-      )}
-
-      {/* Step Circle */}
-      <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold z-10 
-        ${index === 0 ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black'}`}>
-        {index + 1}
-      </div>
-
-      {/* Step Label */}
-      <p className="text-sm mt-2 text-center">{step}</p>
-    </div>
-  ))}
-</div>
-
-
-
-
-
-
-      {/* Region Tabs */}
-      <div className="flex flex-wrap gap-2 my-10">
-        {regions.map(region => (
-          <button
-            key={region}
-            onClick={() => setActiveRegion(region)}
-            className={`px-4 py-1 rounded-md border text-sm font-medium 
-              ${activeRegion === region ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700'}`}
-          >
-            {region}
-          </button>
-        ))}
-      </div>
-
-      {/* Instruction */}
-      <p className="text-orange-600 font-medium mb-3">
-        *Select countries you want to hide from the selected zone (optional)
-      </p>
-
-      {/* Country Tags */}
-      <div className="flex flex-wrap gap-3">
-        {countries.map(country => (
-          <span
-            key={country}
-            onClick={() => toggleCountry(country)}
-            className={`px-3 py-1 rounded-md text-sm cursor-pointer border 
-              ${hiddenCountries.includes(country)
-                ? 'bg-red-500 text-white border-red-600'
-                : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'}`}
-          >
-            {country}
-          </span>
-        ))}
-      </div>
-
-        <div className="button text-end my-6">
-               <button className='primary_btn'> Next</button>
+          <div>
+            <Outlet></Outlet>
+          </div>
+          
         </div>
+      </div>
     </div>
-   </div>
   );
 };
 

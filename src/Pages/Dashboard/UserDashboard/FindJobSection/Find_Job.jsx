@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 const Find_Job = () => {
 
     const [jobs,setJobs] = useState(null);
+
     console.log(jobs);
     
 
