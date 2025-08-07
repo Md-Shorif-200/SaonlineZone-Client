@@ -13,9 +13,16 @@
  }
 
 
-  .primary_btn{
-    @apply bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300 font-medium shadow
-  }
+ .primary_btn {
+  @apply 
+    bg-gradient-to-r from-cyan-500 to-blue-500 
+    text-white px-5 py-2.5 
+    rounded-md shadow-md font-medium 
+    transition duration-300 ease-in-out 
+    transform hover:scale-105 hover:shadow-lg 
+    hover:from-blue-500 hover:to-cyan-500;
+}
+
   .btn_outline {
     @apply  border border-blue-600  text-blue-600 px-4 py-2  rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:text-white transition duration-300 font-medium
   }
@@ -23,6 +30,49 @@
   .common_spacing{
     @apply px-4 sm:px-8 md:px-12 lg:px-16
   }
+
+
+
+  /* JobStatTile.css */
+
+.stat_circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #3b82f6; /* blue-500 */
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.2);
+}
+
+.animate-bounce-custom {
+  animation: bounceScale 1.5s infinite ease-in-out;
+}
+
+@keyframes bounceScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+
+@media (min-width : 500px) and (max-width : 640px) {
+     .tabs-btn {
+     @apply grid-cols-3
+     }
+     .tab-btn {
+     @apply  w-36
+     }
+}
+
+@media (min-width : 830px) and (max-width : 1024px) {
+     .tabs-btn {
+     @apply grid-cols-3
+     }
+   
+}
+
 
 
 

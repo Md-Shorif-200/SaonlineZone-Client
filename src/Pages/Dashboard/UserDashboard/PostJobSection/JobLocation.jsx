@@ -61,25 +61,26 @@ const JobLocation = () => {
   const countries = countriesData[selectedCategory] || [];
 
   return (
-    <div className='pt-20'>
-      {/*  COUNTY LOCATION Tabs */}
-      <div className="tabs tabs-boxed mb-4 flex flex-wrap gap-2">
-        {categories.map(cat => (
-          <button
-            key={cat}
-            onClick={() => setSelectedCategory(cat)}
-            className={`tab transition-all duration-200 ${
-              selectedCategory === cat
-                ? 'bg-blue-500 text-white'
-                : 'bg-base-200 hover:bg-blue-100 text-gray-800'
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+    <div className='pt-10 lg:pt-20'>
+      {/*  COUNTRY LOCATION Tabs */}
+    <div className="tabs-btn tabs tabs-boxed mb-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6  gap-2">
+  {categories.map((cat) => (
+    <button
+      key={cat}
+      onClick={() => setSelectedCategory(cat)}
+      className={` tab-btn tab transition-all duration-200 font-semibold border w-40
+        ${selectedCategory === cat 
+          ? '!bg-blue-500 !text-white !border-blue-500'
+          : 'bg-base-200 hover:bg-blue-100 text-black border border-gray-200'
+        }`}
+    >
+      {cat}
+    </button>
+  ))}
+</div>
 
-      <p className="mb-3 border border-orange-400 rounded-md px-3 py-1 text-orange-600 italic font-semibold text-sm max-w-max">
+
+      <p className="mb-6 border border-orange-400 rounded-md px-3 py-1 text-orange-600 italic font-semibold text-sm max-w-max">
         *Select one country as the job location.
       </p>
 
@@ -111,11 +112,11 @@ const JobLocation = () => {
       )}
 
       {/* Next Button */}
-      <div className="mt-6 flex gap-3">
+      <div className="mt-6 flex justify-end">
        
 
         <button
-          className="btn btn-primary"
+          className="primary_btn"
           onClick={handleNext}
         >
           Next

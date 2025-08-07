@@ -71,16 +71,16 @@ const JobCategory = () => {
   return (
     <div className="pt-20">
       {/* Main Category Tabs */}
-      <div className="tabs tabs-boxed mb-4 flex flex-wrap gap-2">
+      <div className="tabs-btn tabs tabs-boxed mb-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6  gap-2">
         {mainCategories.map(cat => (
           <button
             key={cat}
             onClick={() => handleSelectMainCategory(cat)}
-            className={`tab transition-all duration-200 ${
-              selectedMainCategory === cat
-                ? 'bg-blue-500 text-white'
-                : 'bg-base-200 hover:bg-blue-100 text-gray-800'
-            }`}
+              className={` tab-btn tab transition-all duration-200 font-semibold border w-40
+        ${selectedMainCategory === cat 
+          ? '!bg-blue-500 !text-white !border-blue-500'
+          : 'bg-base-200 hover:bg-blue-100 text-black border border-gray-200'
+        }`}
           >
             {cat}
           </button>
@@ -119,11 +119,11 @@ const JobCategory = () => {
       )}
 
       {/* Back & Next Buttons */}
-      <div className="mt-6 flex gap-3">
-        <button className="btn btn-outline" onClick={handleBack}>
+      <div className="mt-6 flex justify-end gap-3">
+        <button className="btn_outline" onClick={handleBack}>
           Back
         </button>
-        <button className="btn btn-primary" onClick={handleNext}>
+        <button className="primary_btn" onClick={handleNext}>
           Next
         </button>
       </div>

@@ -24,8 +24,8 @@ const userMenuLinks = [
 
 const UserMenu = () => {
   return (
-    <div className="w-70 md:w-80 primary_bg_color min-h-screen  p-4">
-      <ul className="bg-base-200 shadow-sm rounded-xl min-h-full w-full md:w-60 lg:w-72 p-4 space-y-2 h-1/2 text-base-content">
+    <div className="w-70 md:w-60 lg:w-75 primary_bg_color min-h-screen  p-4">
+      <ul className="bg-base-200 shadow-sm rounded-xl min-h-full w-full md:w-50 lg:w-60 p-4 space-y-2 h-1/2 text-base-content">
 
         <li className="text-xl text-center font-bold primary_text_color mb-6">User Panel</li>
 
