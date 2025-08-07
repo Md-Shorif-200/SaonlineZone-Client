@@ -145,14 +145,14 @@ const JobBudgetForm = () => {
         <div className="md:col-span-2 flex flex-col sm:flex-row justify-end gap-4 mt-10">
           <button
             type="button"
-            className="w-full sm:w-auto bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 transition focus:outline-none focus:ring-2 focus:ring-red-400"
+            className="btn_outline"
               onClick={() => handleBack()}
           >
             Back
           </button>
           <button
             type="submit"
-            className="w-full sm:w-auto bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="primary_btn"
           
           >
             Submit
