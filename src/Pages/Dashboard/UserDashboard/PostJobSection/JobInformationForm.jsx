@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { usePostJob } from '../../../../Context/PostJobProvider';
 
 const JobInformationForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
 
- const { updatePostJobData,setIsActiveLine3 } = usePostJob();  // context api
-  const navigate = useNavigate();
+ const { updatePostJobData,setJobInformationFormPath,setJobBudgetFormPath,setJobCategoryPath } = usePostJob();  // context api
+ const navigate = useNavigate();
+
+ const location = useLocation();  // get route location
+
+useEffect(() => {
+  setJobBudgetFormPath(null);
+  setJobInformationFormPath(true);
+  setJobCategoryPath(true);
+}, [location.key]);
 
   const onSubmit = (data) => {
     updatePostJobData("jobInformation", data); 
     navigate("/dashboard/Post-Job/budget-settings"); 
-            setIsActiveLine3(true)
+        
   };
 
   const handleBack = () => {

@@ -30,17 +30,20 @@ const Navbar = () => {
 
      const navLinks = (
     <>
-      <li className={`text-base mx-0 md:mx-4 my-4 md:my-0 font-semibold uppercase ${isScrolled ? 'text-gray-800' : 'text-black md:text-white'}`}>
+      <li className={`text-base mx-0 md:mx-4 my-4 md:my-0 font-semibold uppercase ${isScrolled ? 'text-gray-800' : 'text-black lg:text-white'}`}>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className={`text-base mx-0 md:mx-4 my-4 md:my-0 font-semibold uppercase ${isScrolled ? 'text-gray-800' : 'text-black md:text-white'}`}>
+      <li className={`text-base mx-0 md:mx-4 my-4 md:my-0 font-semibold uppercase ${isScrolled ? 'text-gray-800' : 'text-black lg:text-white'}`}>
         <NavLink to="/about-us">About us</NavLink>
       </li>
-      <li className={`text-base mx-0 md:mx-4 my-4 md:my-0 font-semibold uppercase ${isScrolled ? 'text-gray-800' : 'text-black md:text-white'}`}>
+      <li className={`text-base mx-0 md:mx-4 my-4 md:my-0 font-semibold uppercase ${isScrolled ? 'text-gray-800' : 'text-black lg:text-white'}`}>
         <NavLink to="/blog">Blog</NavLink>
       </li>
-      <li className={`text-base mx-0 md:mx-4 my-4 md:my-0 font-semibold uppercase ${isScrolled ? 'text-gray-800' : 'text-black md:text-white'}`}>
+      <li className={`text-base mx-0 md:mx-4 my-4 md:my-0 font-semibold uppercase ${isScrolled ? 'text-gray-800' : 'text-black lg:text-white'}`}>
         <NavLink to="/">Contact</NavLink>
+      </li>
+      <li className={`text-base mx-0 md:mx-4 my-4 md:my-0 font-semibold uppercase ${isScrolled ? 'text-gray-800' : 'text-black lg:text-white'}`}>
+        <NavLink to="/dashboard">Dashboard</NavLink>
       </li>
     </>
   );

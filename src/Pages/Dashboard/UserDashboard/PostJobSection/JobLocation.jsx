@@ -16,11 +16,13 @@ const categories = [
 
 const JobLocation = () => {
   const [countriesData, setCountriesData] = useState({});
-  const { postJobData, updatePostJobData ,setIsActiveLine1} = usePostJob(); // context api
+  const { postJobData, updatePostJobData,setJobCategoryPath,setJobBudgetFormPath} = usePostJob(); // context api
   const [selectedCategory, setSelectedCategory] = useState("All"); // data category
   const [selectedCountry, setSelectedCountry] = useState(postJobData.location || null); // county
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  setJobCategoryPath(null);
+  setJobBudgetFormPath(null)
 
       // fetch county data
   useEffect(() => {
@@ -50,7 +52,7 @@ const JobLocation = () => {
     }
     updatePostJobData("location", selectedCountry); 
     navigate('/dashboard/Post-Job/job-category');  // navigate to next route
-    setIsActiveLine1(true)
+    // setIsActiveLine1(true)
 
   };
 

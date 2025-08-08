@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { usePostJob } from "../../../Context/PostJobProvider";
 
 const PostJob = () => {
-  const { activeLine1, activeLine2, activeLine3 } = usePostJob(false); // Collect data from the context api
+  const { jobCategoryPath , jobInformationFormPath, jobBudgetFormPath } = usePostJob(); // Collect data from the context api
 
   return (
     <div>
@@ -36,7 +36,7 @@ const PostJob = () => {
                 {/*line 1 */}
               <div
                 className={`line_1 w-full h-1 absolute top-5 left-5  z-0 ${
-                  activeLine1 ? "bg-blue-500" : "bg-gray-300"
+                  jobCategoryPath ? "bg-blue-500" : "bg-gray-300"
                 } `}
               ></div>
             </div>
@@ -46,7 +46,7 @@ const PostJob = () => {
               <div className=" ">
                 <div
                   className={`w-10 lg:w-12 h-10 lg:h-12 shadow-sm border border-gray-300 rounded-full font-semibold text-2xl flex justify-center items-center z-10 relative ${
-                    activeLine1
+                    jobCategoryPath
                       ? "bg-blue-500 text-white"
                       : " bg-white  text-black"
                   }`}
@@ -58,7 +58,7 @@ const PostJob = () => {
                         {/* line 2 */}
               <div
                 className={`line_2 w-full h-1 absolute top-5 left-5  z-0 ${
-                  activeLine2 ? "bg-blue-500" : "bg-gray-300"
+                  jobInformationFormPath ? "bg-blue-500" : "bg-gray-300"
                 } `}
               ></div>
             </div>
@@ -68,7 +68,7 @@ const PostJob = () => {
               <div className=" ">
                 <div
                   className={`w-10 lg:w-12 h-10 lg:h-12 shadow-sm border border-gray-300 rounded-full font-semibold text-2xl flex justify-center items-center z-10 relative ${
-                    activeLine2
+                    jobInformationFormPath
                       ? "bg-blue-500 text-white"
                       : " bg-white  text-black"
                   }`}
@@ -80,7 +80,7 @@ const PostJob = () => {
                     {/* line 3 */}
               <div
                 className={`line_3 w-full h-1 absolute top-5 left-5  z-0 ${
-                  activeLine3 ? "bg-blue-500" : "bg-gray-300"
+                  jobBudgetFormPath ? "bg-blue-500" : "bg-gray-300"
                 } `}
               ></div>
             </div>
@@ -90,7 +90,7 @@ const PostJob = () => {
               <div className=" ">
                 <div
                   className={`w-10 lg:w-12 h-10 lg:h-12 shadow-sm border border-gray-300 rounded-full font-semibold text-2xl flex justify-center items-center z-10 relative ${
-                    activeLine3
+                    jobBudgetFormPath
                       ? "bg-blue-500 text-white"
                       : " bg-white  text-black"
                   }`}

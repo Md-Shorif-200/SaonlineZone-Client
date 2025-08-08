@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { usePostJob } from '../../../../Context/PostJobProvider';
 
 const JobBudgetForm = () => {
@@ -19,15 +19,24 @@ const JobBudgetForm = () => {
   });
 
     const navigate = useNavigate();
-  const { postJobData, updatePostJobData ,setIsActiveLine1,setIsActiveLine2,setIsActiveLine3} = usePostJob(); // context api
+  const { postJobData, updatePostJobData ,setJobCategoryPath,setJobInformationFormPath,setJobBudgetFormPath} = usePostJob(); // context api
+
+   const location = useLocation();  // get route location
+   setJobBudgetFormPath(location.pathname);
+   setJobInformationFormPath(true);
+   setJobCategoryPath(true)
+
 
   const onSubmit = (data) => {
     updatePostJobData('budget', data);
-  alert('form submited succesfully');
-          <Navigate to='/'></Navigate>
-         setIsActiveLine1(false);
-         setIsActiveLine2(false);
-         setIsActiveLine3(false)
+
+                setTimeout(() => {
+                  navigate('/dashboard/Post-Job')
+                   setJobCategoryPath(null);
+          setJobInformationFormPath(null)
+                }, 300);
+
+         
   };
 
   const workerNeed = watch('workerNeed');

@@ -16,11 +16,12 @@ export const PostJobProvider = ({ children }) => {
 
   });
 
-  const [activeLine1 ,setIsActiveLine1] = useState(false)
-  const [activeLine2 ,setIsActiveLine2] = useState(false)
-  const [activeLine3 ,setIsActiveLine3] = useState(false)
+  const [jobCategoryPath ,setJobCategoryPath] = useState(null)
+  const [jobInformationFormPath ,setJobInformationFormPath] = useState(null)
+  const [jobBudgetFormPath ,setJobBudgetFormPath] = useState(null)
 
-   console.log(postJobData);
+
+   console.log(jobCategoryPath);
    
   // Dynamic Update Function
   const updatePostJobData = (key, value) => {
@@ -28,7 +29,7 @@ export const PostJobProvider = ({ children }) => {
   };
 
   return (
-    <PostJobContext.Provider value={{ postJobData, updatePostJobData,setIsActiveLine1,setIsActiveLine2,setIsActiveLine3,activeLine1,activeLine2,activeLine3 }}>
+    <PostJobContext.Provider value={{ postJobData, updatePostJobData,jobCategoryPath,jobInformationFormPath,jobBudgetFormPath,setJobCategoryPath ,setJobInformationFormPath,setJobBudgetFormPath}}>
       {children}
     </PostJobContext.Provider>
   );

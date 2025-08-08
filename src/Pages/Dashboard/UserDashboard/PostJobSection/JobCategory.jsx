@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { usePostJob } from '../../../../Context/PostJobProvider';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const JobCategory = () => {
-  const [jobCategoryData, setJobCategoryData] = useState({});
-  const [selectedMainCategory, setSelectedMainCategory] = useState('All');
+  const [jobCategoryData, setJobCategoryData] = useState({}); // store job category data
+  const [selectedMainCategory, setSelectedMainCategory] = useState('All'); 
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); // loading state 
 
-  const { updatePostJobData,setIsActiveLine2 } = usePostJob(); // context api
-  const navigate = useNavigate();
+  const { updatePostJobData,setJobCategoryPath,setJobInformationFormPath } = usePostJob(); // context api
+  const navigate = useNavigate();  // react router navigate
+  const location = useLocation() ; // route location
+  
+
+  setJobCategoryPath(location.pathname) // store location path
+  setJobInformationFormPath(null);
+
+  
 
   useEffect(() => {
     const fetchCategories = async () => {
